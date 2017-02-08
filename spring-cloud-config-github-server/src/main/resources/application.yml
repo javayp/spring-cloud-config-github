@@ -2,10 +2,19 @@
 server:
   port: 8888
 
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password
+    
 spring:
   cloud:
     config:
       server:
+        encrypt:
+          enabled: false
         git:
           uri: https://github.com/javayp/spring-cloud-config-ba-tolls
           search-paths:
