@@ -1,0 +1,30 @@
+---
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/javayp/spring-cloud-config-ba-tolls
+          search-paths:
+          - 'station*'
+          #username: 
+          #password: 
+          repos:
+            performace:
+              pattern:
+              - "*/perf"
+              - "*speed"
+              uri: https://github.com/javayp/spring-cloud-config-ba-tolls-performance
+              search-paths:
+              - 'station*'
+            latency:
+              pattern:
+              - "*/late"
+              - "*/slow"
+              uri: https://github.com/javayp/spring-cloud-config-ba-tolls-latency
+              search-paths:
+              - 'station*'
+              - 'late*' 
